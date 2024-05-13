@@ -39,9 +39,16 @@ public class ScrapperClass {
                             englishMeanings.append(", ");
                         }
                     }
+                    String mnemonicQuery = ".subject-section__text";
+                    String getMnemonic  = englishDocument.select(mnemonicQuery).text();
+
+                    String mnemonicHintQuery = ".subject-hint__text";
+                    String getHintMnemonic  = englishDocument.select(mnemonicQuery).text();
                     System.out.println("Kanji: " + kanji);
                     System.out.println("Furigana: " + furigana);
                     System.out.println("English: " + englishMeanings);
+                    System.out.println("Mnemonic: " + getMnemonic);
+                    System.out.println("Hint: " + getHintMnemonic);
                 }
             }
         } catch (IOException e) {
